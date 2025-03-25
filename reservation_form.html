@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External Style Sheet -->
+    <link rel="stylesheet" href="reservation_form.css">
+    <title>Document</title>
+    <!-- Internal Style Sheet -->
+    <!-- <style></style> -->
+</head>
+<body>
+    <div class="formFull">
+        <div class="heading">
+            <h2>Reservation Form</h2>
+        </div>
+        <div class="formOnly">
+            <!-- FAME - Form, Action, Method, Enctype -->
+            <form action="index.php" method="POST" enctype="multipart/form-data">
+
+                <!-- for attribute in label and id attribute in input must match -->
+                <!-- they are not necessary, but improve accessibility -->
+                <!-- id must be unique  -->
+
+                <!-- name attribute is useful for JS and backend handling -->
+                <!-- name does not have to match with anything -->
+                <!-- name need not be unique -->
+            
+                <!-- Text - Name -->
+                <div class="formItem">
+                    <label for="first name">First Name</label>
+                    <input type="text" id="first_name" placeholder="Dheetchanya" minlength="3" maxlength="20" required>
+                </div>
+
+                <div class="formItem">
+                    <label for="last name">Last Name</label>
+                    <input type="text" id="last_name" placeholder="Mohan" minlength="3" maxlength="25" required>
+                </div>
+                
+                <!-- Radio Buttons -->
+                <div class="formItem">
+                    <label for="title">Title</label>
+                    <!-- To ensure that only one radio button can be selected at a time, 
+                     all radio buttons in a group must share the same name attribute. -->
+                    <div class="rad">
+                        <input type="radio" id="Mr." value="Mr." name="title">
+                        <label for="Mr.">Mr.</label>
+                        <input type="radio" id="Ms." value="Ms." name="title">
+                        <label for="Ms.">Ms.</label>
+                    </div>
+                </div>                
+                
+                <!-- Email -->
+                <div class="formItem">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="dheetchanya.mohan@example.com" required>
+                </div>
+                
+                <!-- Phone Number -->
+                <div class="formItem">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" minlength="10" maxlength="10" required>
+                </div>
+                
+                <!-- Numeric input - Number of Guests -->
+                <div class="formItem">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" placeholder="3" min="1" max="20" required>
+                </div>
+
+                <!-- Date -->
+                <div class="formItem">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                
+                <!-- Time -->
+                <div class="formItem">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" min="9:00" max="22:00" required>
+                </div>
+                
+                <!-- Dropdown menu - Seating Preference -->
+                <div class="formItem">
+                    <label for="Seating preference">Where would you prefer to be seated?</label>
+                    <!-- Dropdown menu uses <select> and not <input> -->
+                        <!-- <option> tags are used within <select> -->
+                    <select id="seating">
+                        <option value="Indoor">Indoor</option>
+                        <option value="Outdoor">Outdoor</option>
+                        <option value="Rooftop">Rooftop</option>
+                        <option value="Private">Private</option>
+                    </select>
+                </div>
+
+                <!-- Dropdown menu - Table Preference -->
+                <div class="formItem">
+                    <label for="Table preference">What table would you prefer?</label>
+                    <select id="table preference">
+                        <option value="Standard Table">Standard Table</option>
+                        <option value="Booth">Booth</option>
+                    </select>
+                </div>
+                
+                <!-- Checkbox - Dietary Restrictions -->
+                <div class="formItem">
+                    <label for="dietary">Dietary Restrictions (if any)</label>
+                    <!-- For multiple possible values for same field in checkbox
+                        use same name attribute -->
+                    <div class="check">
+                        <input type="checkbox" id="vegetarian" name="dietary" value="Vegetarian"> Vegetarian
+                        <input type="checkbox" id="vegan" name="dietary" value="Vegan"> Vegan
+                        <input type="checkbox" id="gluten_free" name="dietary" value="Gluten Free"> Gluten-Free
+                    </div>
+                </div>
+                
+                <!-- Text Area -->
+                <div class="formItem">
+                    <label for="special requests">Any special requests?</label>
+                    <!-- <textarea> is a special tag for multiline input -->
+                    <div class="textArea">
+                        <textarea id="requests" rows="2" cols="27"></textarea>
+                    </div>
+                </div>
+
+                <!-- File Upload -->
+                <div class="formItem">
+                    <label for="event-details">Are you hosting an event? If so, help us prepare by uploading event details</label>
+                    <!-- Use <accpet> to specify allowable form types (or image types) -->
+                    <div class="upload">
+                        <input type="file" id="event-details" name="event-details" accept=".pdf, .jpg, .png, .docx">
+                    </div>
+                </div>
+
+                <!-- Form Submission -->
+                <div class="formItem">
+                    <input type="reset">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+@font-face{
+    font-family: Playfair_Display;
+    src: url(fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+*{
+    font-family: Playfair_Display;
+}
+
+html{
+    scroll-snap-type: y mandatory;
+}
+
+body{
+    background-color: black;
+    margin: 2px;
+}
+
+i{
+    color: white;
+    margin-top: 20px;
+    margin-left: 20px; /* Adds space between menu items */
+    /* margin-right: 10px; */
+}
+
+/* --h1: bold max(36px, 4vw)/max(48px, 5vw) var(-ff); */
+
+nav{
+    margin-top: 40px;
+}
+
+.navbardiv{
+    scroll-snap-align: start;
+}
+
+.navbar{
+    display: flex;
+    /* turns the navbar into flex container */
+    /* all direct children (<i> and <ul>) become flex items */
+    /* flex items are positioned in a row by default */
+    align-items: center;
+    justify-content: space-between;
+    /* pushes the first child (the icon) to the far left and the last child (the menu <ul>) to the far right, */
+    /* background-color: black; */
+    padding: 10px;
+    margin-top: 30px;
+    margin-right: 90px;
+    /* scroll-snap-align: start; */
+}
+
+.navbar ul{
+    display: flex;
+    /* make <ul> itself into a flex container */
+    /* thus list items (<li>) become flex items */
+    /* they are aligned horizontally */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar i{
+    color: white;
+    font-size: 24px; /* Adjust the size of the icon if needed */
+    padding: 10px;
+}
+
+.navbar i:hover{
+    background-color: white;
+    color: black;
+}
+
+.navbar li{
+    margin-top: 20px;
+    margin-left: 20px; /* Adds space between menu items */
+    margin-right: 20px;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    /* font: var(--h1); */
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover{
+    background-color: white;
+    color: black;
+}
+
+
+/* .typewriter{
+    display: flex;
+    justify-content: center;
+}
+
+.typewriter h2{
+    margin-inline: auto;
+    overflow: hidden;
+    /* keep on single line */
+    /*white-space: nowrap;
+    border-right: 1px solid white;
+    /* number of characters = steps */
+    /*animation: typing 3s steps(22) forwards, blink 1s step-end infinite;
+}
+
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes blink{
+    50%{
+        border-color: transparent;
+    }
+} */
+
+/* Container for the image and text */
+.container{
+    /* Center container horizontally */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* Center vertically */
+    padding: 10%;
+    scroll-snap-align: center;
+}
+
+/* Container for 1st section of menu */
+.container1{
+    /* Center container horizontally */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* Center vertically */
+    padding: 5%;
+    scroll-snap-align: center;
+}
+
+/* .highlight{
+    /* font-weight: 120px; */
+    /*background-color: white;
+    color: black;
+} */
+
+.text_left{
+    /* float: left; */
+    color: white;
+    width: 400px;
+    font-size: 1.3em;
+}
+
+.text_right{
+    /* float: left; */
+    color: white;
+    width: 400px;
+    font-size: 1.3em;
+    margin-left: 120px;
+}
+
+.quote{
+    font-size: 1em;
+}
+
+.feedback{
+    font-size: 1em;
+    /* text-decoration: none; */
+    color: white;
+}
+
+.desc{
+    font-size: 0.8em;
+}
+
+.menu_item{
+    font-size: 0.8em;
+}
+
+.menu_desc{
+    font-size: 0.7em;
+}
+
+.focalimage_right img{
+    width: 400px;
+    height: 300px;
+    object-fit: cover; /* Crops the image while maintaining aspect ratio */
+    margin-left: 120px;
+}
+
+.focalimage_left img{
+    width: 400px;
+    height: 300px;
+    object-fit: cover; /* Crops the image while maintaining aspect ratio */
+    /* margin-right: 70px; */
+}
+
+.menu_image img{
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    margin-left: 40px;
+}
+
+/* Styling for split-screen */
+@media (max-width: 768px){
+    .navbar a{
+        /* text-align: right; */
+        font-size: 15px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container1{
+        flex-direction: column;
+    }
+    .text_left, .text_right{
+        width: 300px; /* Full width on smaller screens */
+        text-align: center;
+        margin-left: 0px;
+    }
+    .focalimage_right img, .focalimage_left img {
+        width: 300px; /* Full width on smaller screens */
+        height: 400px; 
+        object-fit: cover;
+        margin: 20px 0; /*Add spacing between text and image*/
+    }
+    .menu_section{
+        font-size: 0.9em;
+    }
+    .menu_image img{
+        /* display: none; */
+        float: none;
+        width: 300px;
+        height: 400px; 
+        object-fit: cover;
+        margin-top: 3px;
+        margin-left: 0px;
+    }
+    .menu_item{
+        text-align: left;
+        font-size: 0.6em;
+    }
+    .menu_desc{
+        text-align: left;
+        font-size: 0.6em;
+    }
+}
